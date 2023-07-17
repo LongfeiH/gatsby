@@ -78,9 +78,13 @@ module.exports = {
         {
             resolve: `gatsby-source-ghost`,
             options:
-                process.env.NODE_ENV === `development`
-                    ? ghostConfig.development
-                    : ghostConfig.production,
+            // process.env.NODE_ENV === `development`
+            //     ? ghostConfig.development
+            //     : ghostConfig.production,
+            {
+                apiUrl: `http://localhost:2368`,
+                contentApiKey: `80046cfee4da05915e8fe4e3cc`,
+            }
         },
         /**
          *  Utility Plugins
